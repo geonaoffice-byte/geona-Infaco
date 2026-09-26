@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://geona-infaco.netlify.app/sitemap.xml
+Sitemap: https://infaco.geona.ro/sitemap.xml
