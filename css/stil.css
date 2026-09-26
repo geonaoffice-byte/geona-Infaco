@@ -1,0 +1,317 @@
+/* Stilul comun al paginilor INFACO prin Geona.
+   Pornit din Pagina-INFACO-Geona.html (26 sept 2026); o singură rețetă pentru toate paginile. */
+
+:root {
+  --rosu: #E30613;
+  --rosu-inchis: #B8000C;
+  --negru: #151515;
+  --negru-2: #222222;
+  --gri: #5c5c5c;
+  --gri-deschis: #f3f3f3;
+  --linie: #e2e2e2;
+  --alb: #ffffff;
+  --max: 1160px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--negru);
+  background: var(--alb);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 {
+  font-family: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Butoane ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 14px 28px;
+  font-family: "Barlow Condensed", Arial, sans-serif;
+  font-weight: 700; font-size: 20px; letter-spacing: 0.04em; text-transform: uppercase;
+  text-decoration: none; border-radius: 4px; border: 2px solid transparent;
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+  cursor: pointer; text-align: center;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-rosu { background: var(--rosu); color: var(--alb); }
+.btn-rosu:hover { background: var(--rosu-inchis); }
+.btn-contur { border-color: currentColor; color: var(--alb); background: transparent; }
+.btn-contur:hover { background: var(--alb); color: var(--negru); border-color: var(--alb); }
+.btn-contur-negru { border-color: var(--negru); color: var(--negru); background: transparent; }
+.btn-contur-negru:hover { background: var(--negru); color: var(--alb); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* ---------- Antet ---------- */
+.antet {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--negru); color: var(--alb);
+  border-bottom: 3px solid var(--rosu);
+}
+.antet .container { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.logo { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+.logo-infaco {
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 800; font-style: italic;
+  font-size: 28px; letter-spacing: 0.06em; color: var(--alb);
+}
+.logo-dealer { font-size: 13px; color: #bdbdbd; line-height: 1.2; }
+.logo-dealer strong { color: var(--alb); font-weight: 600; }
+.antet .btn { min-height: 42px; padding: 8px 18px; font-size: 17px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(115deg, var(--negru) 0%, var(--negru-2) 60%, #2d2d2d 100%);
+  color: var(--alb); border-bottom: 6px solid var(--rosu);
+}
+.hero .container {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px;
+  padding-top: 72px; padding-bottom: 72px;
+}
+.hero-poza { position: relative; }
+.hero-poza::before {
+  content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 3px solid var(--rosu); z-index: 0;
+}
+.hero-poza img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 30% center; }
+.eticheta {
+  display: inline-block; margin-bottom: 18px; padding: 6px 12px;
+  background: var(--rosu); color: var(--alb);
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; font-size: 15px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.hero h1 { font-size: clamp(44px, 6.4vw, 78px); font-weight: 800; }
+.hero h1 span { color: var(--rosu); display: block; }
+.hero p.lead { margin: 22px 0 32px; font-size: 19px; color: #d6d6d6; max-width: 32em; }
+.hero .butoane { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-fapte { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 34px; font-size: 15px; color: #bdbdbd; }
+.hero-fapte b { display: block; font-family: "Barlow Condensed", Arial, sans-serif; font-size: 30px; color: var(--alb); line-height: 1; }
+
+/* ---------- Secțiuni ---------- */
+section { padding: 80px 0; }
+.fundal-gri { background: var(--gri-deschis); }
+.titlu-sectiune { margin-bottom: 44px; max-width: 760px; }
+.titlu-sectiune .supratitlu {
+  display: block; margin-bottom: 10px;
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; font-size: 16px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--rosu);
+}
+.titlu-sectiune h2 { font-size: clamp(34px, 4.6vw, 52px); font-weight: 800; }
+.titlu-sectiune p { margin-top: 14px; color: var(--gri); font-size: 18px; }
+
+/* ---------- Avantaje ---------- */
+.avantaje { background: var(--alb); }
+.grila-avantaje { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.avantaj {
+  position: relative; padding: 34px 28px 30px;
+  background: var(--gri-deschis); border-top: 5px solid var(--rosu);
+}
+.fundal-gri .avantaj { background: var(--alb); }
+.avantaj .nr {
+  position: absolute; top: 14px; right: 20px;
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 800; font-size: 64px; line-height: 1;
+  color: rgba(0,0,0,.07);
+}
+.avantaj .icon {
+  width: 56px; height: 56px; margin-bottom: 20px;
+  display: grid; place-items: center; background: var(--negru); color: var(--alb); border-radius: 50%;
+}
+.avantaj .icon svg { width: 28px; height: 28px; }
+.avantaj h3 { font-size: 27px; font-weight: 700; margin-bottom: 12px; }
+.avantaj p { color: #333; }
+.avantaj ul { list-style: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--linie); }
+.avantaj li { position: relative; padding-left: 20px; margin-bottom: 6px; font-size: 15.5px; color: var(--gri); }
+.avantaj li::before { content: ""; position: absolute; left: 0; top: .62em; width: 9px; height: 3px; background: var(--rosu); }
+
+/* ---------- Bandă foto ---------- */
+.banda-foto { position: relative; padding: 0; background: var(--negru); color: var(--alb); }
+.banda-foto .grid { display: grid; grid-template-columns: 1.15fr 1fr; align-items: stretch; }
+.banda-foto.inversat .grid { grid-template-columns: 1fr 1.15fr; }
+.banda-foto.inversat .foto { order: 2; }
+.banda-foto .foto { min-height: 360px; }
+.banda-foto .foto img { width: 100%; height: 100%; object-fit: cover; }
+.banda-foto .text { padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; }
+.banda-foto .text .supratitlu { color: var(--rosu); font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+.banda-foto h2 { font-size: clamp(32px, 4vw, 46px); font-weight: 800; margin-bottom: 18px; }
+.banda-foto p { color: #d0d0d0; margin-bottom: 14px; }
+.banda-foto .text a:not(.btn) { color: var(--alb); text-decoration-color: var(--rosu); text-underline-offset: 3px; }
+.cifre { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 18px 0 30px; }
+.cifre div { border-left: 3px solid var(--rosu); padding-left: 14px; font-size: 15px; color: #bdbdbd; line-height: 1.35; }
+.cifre b { display: block; font-family: "Barlow Condensed", Arial, sans-serif; font-size: 30px; color: var(--alb); line-height: 1.1; }
+
+/* ---------- Kituri / tabel ---------- */
+.kituri { background: var(--gri-deschis); }
+.kituri-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+.kituri-grid img { width: 100%; border-radius: 4px; }
+.kituri-grid > * { min-width: 0; }
+.tabel-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; border-collapse: collapse; background: var(--alb); font-size: 16px; }
+th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--linie); white-space: nowrap; }
+thead th { background: var(--negru); color: var(--alb); font-family: "Barlow Condensed", Arial, sans-serif; font-size: 19px; letter-spacing: .04em; text-transform: uppercase; }
+thead th:first-child { background: var(--rosu); }
+tbody th { font-weight: 600; color: var(--gri); }
+td { font-variant-numeric: tabular-nums; font-weight: 600; }
+.nota { margin-top: 14px; font-size: 14px; color: var(--gri); }
+.nota a { color: var(--negru); text-decoration-color: var(--rosu); text-underline-offset: 3px; }
+
+/* ---------- Text + poză (secțiuni albe) ---------- */
+.doua-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.doua-col > * { min-width: 0; }
+.doua-col img { width: 100%; border-radius: 4px; }
+.doua-col p { margin-bottom: 14px; color: #333; }
+.doua-col h3 { font-size: 30px; font-weight: 800; margin-bottom: 14px; }
+.supratitlu-rosu {
+  display: block; margin-bottom: 10px;
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; font-size: 16px;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--rosu);
+}
+.doua-col + .doua-col { margin-top: 64px; }
+.doua-col.inversat > :first-child { order: 2; }
+.lista-bife { list-style: none; margin: 18px 0 24px; }
+.lista-bife li { position: relative; padding-left: 30px; margin-bottom: 10px; }
+.lista-bife li::before {
+  content: ""; position: absolute; left: 0; top: .35em; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--rosu) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 12px no-repeat;
+}
+.lista-bife a { text-decoration-color: var(--rosu); text-underline-offset: 3px; }
+
+/* ---------- Film YouTube (poză + buton Play; se deschide pe YouTube, fără cookie-uri pe pagină) ---------- */
+.video {
+  position: relative; display: block; overflow: hidden; border-radius: 4px; background: var(--negru);
+  text-decoration: none; color: var(--alb);
+}
+.video img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; opacity: .82; transition: opacity .2s, transform .3s; }
+.video:hover img { opacity: 1; transform: scale(1.02); }
+.video .play {
+  position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px;
+  display: grid; place-items: center; border-radius: 50%; background: var(--rosu);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+.video .play svg { width: 30px; height: 30px; margin-left: 5px; }
+.video .eticheta-film {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px;
+  background: linear-gradient(transparent, rgba(0,0,0,.8));
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: .03em; text-transform: uppercase;
+}
+
+/* ---------- De ce Geona ---------- */
+.grila-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.garantie { padding: 26px 22px; background: var(--alb); border: 1px solid var(--linie); border-radius: 4px; }
+.garantie b { display: block; font-family: "Barlow Condensed", Arial, sans-serif; font-size: 34px; color: var(--rosu); line-height: 1.05; margin-bottom: 8px; text-transform: uppercase; }
+.garantie p { font-size: 15.5px; color: #333; }
+
+/* ---------- Întrebări frecvente ---------- */
+.faq { max-width: 860px; }
+.faq details { border-bottom: 1px solid var(--linie); }
+.faq summary {
+  list-style: none; cursor: pointer; position: relative; padding: 20px 44px 20px 0;
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; font-size: 23px; letter-spacing: .01em;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  font-size: 32px; font-weight: 600; color: var(--rosu); line-height: 1;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding: 0 0 22px; color: #333; max-width: 46em; }
+.faq details p a { text-decoration-color: var(--rosu); text-underline-offset: 3px; }
+
+/* ---------- Descărcări ---------- */
+.descarcari-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.descarcari-grid.doua { grid-template-columns: repeat(2, minmax(0, 320px)); }
+.doc {
+  display: flex; flex-direction: column; text-decoration: none; color: var(--negru);
+  background: var(--alb); border: 1px solid var(--linie); border-radius: 4px; overflow: hidden;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.doc:hover { border-color: var(--rosu); box-shadow: 0 10px 28px rgba(0,0,0,.08); transform: translateY(-2px); }
+.doc .coperta { aspect-ratio: 4 / 3; background: var(--negru); overflow: hidden; }
+.doc .coperta img { width: 100%; height: 100%; object-fit: cover; }
+.doc .coperta.contain img { object-fit: contain; background: var(--alb); padding: 10px; }
+.doc .info { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.doc .tip { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--rosu); }
+.doc h3 { font-size: 24px; font-weight: 700; }
+.doc .meta { font-size: 14px; color: var(--gri); }
+.doc .descarca {
+  margin-top: auto; padding-top: 12px; display: inline-flex; align-items: center; gap: 8px;
+  font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: .04em;
+}
+.doc .descarca svg { width: 18px; height: 18px; color: var(--rosu); }
+
+/* ---------- Ofertă ---------- */
+.oferta {
+  background: var(--rosu); color: var(--alb); text-align: center; position: relative; overflow: hidden;
+}
+.oferta::before {
+  content: ""; position: absolute; inset: 0 auto 0 -20%; width: 45%;
+  background: rgba(0,0,0,.12); transform: skewX(-18deg);
+}
+.oferta .container { position: relative; }
+.oferta h2 { font-size: clamp(36px, 5vw, 58px); font-weight: 800; margin-bottom: 14px; }
+.oferta p { max-width: 640px; margin: 0 auto 32px; font-size: 19px; color: #ffe3e5; }
+.oferta .butoane { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.oferta .btn-alb { background: var(--alb); color: var(--rosu); }
+.oferta .btn-alb:hover { background: var(--negru); color: var(--alb); }
+.oferta p.ps { margin: 32px auto 0; font-size: 16px; }
+.oferta p.semnatura { margin: 10px auto 0; font-family: "Barlow Condensed", Arial, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: .04em; text-transform: uppercase; color: var(--alb); }
+.oferta .linkuri-produs { margin: 26px auto 0; font-size: 16px; color: #ffe3e5; }
+.oferta .linkuri-produs a { color: var(--alb); text-underline-offset: 3px; }
+
+/* ---------- Pentru cine (legături între pagini) ---------- */
+.pentru-cine { background: var(--negru); color: var(--alb); padding: 56px 0; }
+.pentru-cine h2 { font-size: 30px; font-weight: 800; margin-bottom: 22px; }
+.pentru-cine .grila-4 a {
+  display: block; padding: 20px 20px 18px; border: 1px solid #3a3a3a; border-top: 4px solid var(--rosu);
+  text-decoration: none; transition: background .2s, border-color .2s;
+}
+.pentru-cine .grila-4 a:hover { background: #222; border-color: #555; border-top-color: var(--rosu); }
+.pentru-cine .grila-4 a[aria-current="page"] { opacity: .45; pointer-events: none; }
+.pentru-cine b { display: block; font-family: "Barlow Condensed", Arial, sans-serif; font-size: 24px; text-transform: uppercase; line-height: 1.1; margin-bottom: 6px; }
+.pentru-cine span { font-size: 15px; color: #bdbdbd; }
+
+/* ---------- Subsol ---------- */
+footer { background: var(--negru); color: #a9a9a9; padding: 40px 0; font-size: 15px; border-top: 1px solid #2c2c2c; }
+footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; }
+footer strong { color: var(--alb); }
+footer a { color: var(--alb); text-decoration: none; border-bottom: 1px solid var(--rosu); }
+footer .mic { font-size: 13px; margin-top: 6px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .grila-avantaje { grid-template-columns: 1fr; }
+  .descarcari-grid { grid-template-columns: repeat(2, 1fr); }
+  .kituri-grid, .doua-col { grid-template-columns: 1fr; }
+  .banda-foto .grid, .banda-foto.inversat .grid { grid-template-columns: 1fr; }
+  .banda-foto.inversat .foto { order: 0; }
+  .doua-col.inversat > :first-child { order: 0; }
+  .doua-col + .doua-col { margin-top: 48px; }
+  .banda-foto .text { padding: 48px 20px; }
+  .grila-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  section { padding: 56px 0; }
+  .hero .container { grid-template-columns: 1fr; gap: 36px; padding-top: 40px; padding-bottom: 48px; }
+  .hero-poza::before { inset: 12px -8px -12px 8px; }
+  .hero p.lead { font-size: 17px; }
+  .hero .butoane .btn { flex: 1 1 100%; }
+  .logo-dealer { display: none; }
+  .titlu-sectiune { margin-bottom: 30px; }
+  .oferta .btn { flex: 1 1 100%; }
+  .faq summary { font-size: 20px; }
+}
+@media (max-width: 480px) {
+  .descarcari-grid, .descarcari-grid.doua, .grila-4 { grid-template-columns: 1fr; }
+  .cifre { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cifre b { font-size: 26px; }
+  th, td { padding: 10px 8px; font-size: 15px; white-space: normal; }
+}

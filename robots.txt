@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geona-infaco.netlify.app/sitemap.xml
