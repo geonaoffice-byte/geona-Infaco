@@ -259,6 +259,7 @@ td { font-variant-numeric: tabular-nums; font-weight: 600; }
 .oferta h2 { font-size: clamp(36px, 5vw, 58px); font-weight: 800; margin-bottom: 14px; }
 .oferta p { max-width: 640px; margin: 0 auto 32px; font-size: 19px; color: #ffe3e5; }
 .oferta .butoane { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.banda-foto .butoane { display: flex; flex-wrap: wrap; gap: 14px; }
 .oferta .btn-alb { background: var(--alb); color: var(--rosu); }
 .oferta .btn-alb:hover { background: var(--negru); color: var(--alb); }
 .oferta p.ps { margin: 32px auto 0; font-size: 16px; }
