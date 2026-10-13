@@ -67,6 +67,7 @@ h1, h2, h3 {
 .logo-dealer { font-size: 13px; color: #bdbdbd; line-height: 1.2; }
 .logo-dealer strong { color: var(--alb); font-weight: 600; }
 .antet .btn { min-height: 42px; padding: 8px 18px; font-size: 17px; }
+.antet-butoane { display: flex; gap: 10px; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -315,6 +316,9 @@ footer .sal img { display: block; width: 201px; height: 50px; }
   .faq summary { font-size: 20px; }
 }
 @media (max-width: 480px) {
+  .antet-butoane { gap: 6px; }
+  .antet .btn { padding: 8px 10px; font-size: 15px; }
+  .fara-mobil { display: none; }
   .descarcari-grid, .descarcari-grid.doua, .grila-4 { grid-template-columns: 1fr; }
   .cifre { grid-template-columns: 1fr 1fr; gap: 14px; }
   .cifre b { font-size: 26px; }
